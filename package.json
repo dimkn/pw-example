@@ -1,21 +1,23 @@
 {
-  "name": "pw-example",
-  "version": "1.0.0",
-  "description": "Just a small example repository that demonstrates how a web testing framework might look like",
-  "main": "index.js",
-  "scripts": {},
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/dimkn/pw-example.git"
-  },
-  "keywords": [],
-  "type": "commonjs",
-  "bugs": {
-    "url": "https://github.com/dimkn/pw-example/issues"
-  },
-  "homepage": "https://github.com/dimkn/pw-example#readme",
-  "devDependencies": {
-    "@playwright/test": "^1.62.1",
-    "@types/node": "^26.2.0"
-  }
+    "name": "pw-example",
+    "version": "0.0.1",
+    "description": "Just a small example repository that demonstrates how a web testing framework might look like",
+    "scripts": {
+        "prepare": "husky"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/dimkn/pw-example.git"
+    },
+    "type": "commonjs",
+    "bugs": {
+        "url": "https://github.com/dimkn/pw-example/issues"
+    },
+    "homepage": "https://github.com/dimkn/pw-example#readme",
+    "devDependencies": {
+        "@playwright/test": "^1.62.1",
+        "@types/node": "^26.2.0",
+        "husky": "^9.1.7",
+        "prettier": "3.9.6"
+    }
 }
