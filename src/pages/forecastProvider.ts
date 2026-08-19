@@ -14,30 +14,23 @@ export class ForecastProviderPage extends BasePage {
         )
     }
 
-    /**
-     * The page we're loading is quite heavy with a lot of dynamic content,
-     * thus override the standard nice implementation with a dirty trick
-     */
-    public override async open() {
-        await this.page.goto(this._url, {
-            waitUntil: 'networkidle',
-            timeout: 10_000,
-        })
-    }
-
     public async shouldHaveLocation(city: string) {
-        await expect(
-            this._locationInput,
-            'Weather forecast was shown to a different location'
-        ).toHaveValue(city)
+        await expect(async () => {
+            await expect(
+                this._locationInput,
+                'Weather forecast was shown to a different location'
+            ).toHaveValue(city)
+        }).toPass()
     }
 
     public async shouldPredictWeather(days: number) {
-        const forecast = await this._forecastedDays.all()
+        await expect(async () => {
+            const forecast = await this._forecastedDays.all()
 
-        expect(
-            forecast,
-            'A forecast should exist for a limited amount of days'
-        ).toHaveLength(days)
+            expect(
+                forecast,
+                'A forecast should exist for a limited amount of days'
+            ).toHaveLength(days)
+        }).toPass()
     }
 }
