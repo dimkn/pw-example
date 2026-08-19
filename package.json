@@ -3,7 +3,10 @@
     "version": "0.0.1",
     "description": "Just a small example repository that demonstrates how a web testing framework might look like",
     "scripts": {
-        "prepare": "husky"
+        "prepare": "husky",
+        "format": "npx prettier . --write",
+        "test:debug": "npx playwright test -c ./src/conf/local.ts --ui",
+        "test": "npx playwright test -c ./src/conf/ci.ts"
     },
     "repository": {
         "type": "git",
